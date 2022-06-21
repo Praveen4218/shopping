@@ -1,0 +1,54 @@
+
+
+
+
+<form [formGroup]="contactus" (ngSubmit)="display(contactus.value)"><br>
+    <label>
+        Enter Userame
+    </label>
+
+
+    <input type="text" class="form-control" formControlName="uname"><br><br>
+    
+    <label>
+        Enter Email
+    </label>
+    
+    <input type="text" class="form-control" formControlName="em"><br><br>
+
+    <label>
+        Enter Description
+    </label>
+
+    <textarea  cols="30"class="form-control" formControlName="des"><br><br>
+
+    </textarea><br><br>
+
+
+    <input type="submit" class="btn btn-primary"><br><br>
+
+    <br>
+        <div *ngIf="contactus.controls.uname.errors?.required" class="btn btn-info"><br>
+    
+        Pls enter usernamme
+        </div>
+
+        <div *ngIf="contactus.controls.em.errors?.email" class="btn btn-info">
+        Invalid Email Format
+        </div>
+
+            <div *ngIf="contactus.controls.des.errors?.maxlength" class="btn btn-info">
+            Pls enter value less than 5 charecters
+         </div>
+         <br>
+
+</form>
+    
+    
+     
+    
+    
+    
+    
+    
+

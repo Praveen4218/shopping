@@ -1,0 +1,14 @@
+<p>buy works!</p>
+<label>Pid </label> {{pid}}<br>
+<label>PName </label> {{pname}}<br>
+<label>Price </label> {{price}}<br>
+
+<Label>Enter the Quantity</Label><input type="text" 
+class="form-control" [(ngModel)]="q" ><br>
+
+
+<input type="button" value="Buy Now" class="btn btn-primary">
+
+<label>Total Price : </label>
+
+{{q * price}}

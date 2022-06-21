@@ -1,0 +1,43 @@
+<p>product works!</p>
+<style>
+    .hi
+    {
+        background-color: pink;
+        color:yellow;
+        border:3px dotted darkviolet
+    }
+    .welcome
+    {
+        background-color: steelblue;
+        color:white;
+        border:3px solid yellow
+    }
+    .abc:hover
+    {
+    transition: 2s;
+    transform: scale(1.5);
+    padding: 5px;
+    
+    }
+
+    </style>
+    
+   <input type="button" value="Display/Hide" class="btn-btn-primary" (click)="display()">
+    
+    <div >
+        <div class="row"><br><br>
+            <div  class="col-md-7" *ngFor="let a of prod"><br><br>
+                <img *ngIf="b" class="abc" src={{a.pimage}} height=100px>
+               <div>{{a.pid}}</div>
+                <div>{{a.pname | uppercase}}<b></b></div>
+                <div>{{a.Price | currency:'INR'}}</div>
+                <div> Discount Price={{a.Price | discount:20 | currency:'INR' }}</div>
+                <div>{{a.pdesc}}</div>
+                <!-- <div><a href="#" class="btn btn-info">Add to Cart</a></div><br> <br> -->
+                <!-- <div><a  routerLink = "/app-buy">buy [queryParams]={pid:a.pid,pname:a.pname,price:a.Price}  -->
+                    <div><a  routerLink = "/app-buy"  [queryParams]={pid:a.pid,pname:a.pname,price:a.Price,pimage:a.pimage} 
+                        class="btn btn-info">Buy</a></div>  <br><br>
+                    <!-- class="btn btn-info">Buy</a></div>  <br><br> -->
+            </div>
+        </div>
+    </div>

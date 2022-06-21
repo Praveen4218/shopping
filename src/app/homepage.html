@@ -1,0 +1,38 @@
+<div *ngFor = "let a of stud"  style="background-color:steelblue;color:yellow">
+    <div> {{a.id}}</div>
+    <div> {{a.studentname}}</div>
+    <div> {{a.totalmarks}}</div>
+ <hr>
+ </div>
+ 
+ <hr>
+ 
+ 
+ 
+ <form  #kuchbhi="ngForm" (ngSubmit)="Addstudents(kuchbhi.value)">
+ 
+    {{kuchbhi.value | json}}
+ 
+ <div  style="width:500px;margin-left:300px">
+    
+ <label>Studentid</label>
+ <input type="text"  name="studentid" ngModel class="form-control"> <br><br>
+ 
+ <label>Studentname</label>
+ <input type="text" name="studentname" ngModel class="form-control"><br><br>
+ 
+ <label>Major Subject</label>
+ <input type="text"  name="majorsubject" ngModel class="form-control"> <br><br>
+ 
+ 
+ <label>totalmarks</label>
+ <input type="text"  name="totalmarks" ngModel class="form-control"> <br><br>
+ <label>dob</label>
+ <input type="text"  name="dob" ngModel class="form-control"> <br><br>
+ 
+ 
+ <input type="submit"  value="Add New Students" class="btn btn-primary">
+ 
+ </div>
+ </form>
+ 

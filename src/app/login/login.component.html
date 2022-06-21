@@ -1,0 +1,78 @@
+<!-- <h1> Login</h1>
+<!DOCTYPE html>    
+<html>    
+<head>    
+    <title>Login Form</title>    
+    <link rel="stylesheet" type="text/css" href="login.component.css">    
+</head>    
+<body>    
+    <h2>Login Page</h2><br>    
+    <div class="login">    
+    <form id="login" method="get" action="login.php">    
+        <label><b>User Name     
+        </b>    
+        </label>    
+        <input type="text" name="Uname" id="Uname" placeholder="Username">    
+        <br><br>    
+        <label><b>Password     
+        </b>    
+        </label>    
+        <input type="Password" name="Pass" id="Pass" placeholder="Password">    
+        <br><br>    
+        <input type="button" name="log" id="log" value="Log In Here">       
+        <br><br>    
+        <input type="checkbox" id="check">    
+        <span>Remember me</span>    
+        <br><br>    
+        Forgot <a href="#">Password</a>    
+    </form>     
+</div>    
+</body>    
+</html> -->
+<style>
+    .iv
+    {
+    border:3px solid red;
+    }
+    
+    .v
+    {
+    border:3px solid green;
+    }
+    </style>
+    
+    
+    <form  #kuchbhi="ngForm" (ngSubmit)="validate(kuchbhi.value)">
+    
+       {{kuchbhi.value | json}}
+    
+    <div  style="width:500px;margin-left:300px">
+    
+       {{m.value | json}}
+       {{m.touched}}<br>
+       {{m.untouched}}<br>
+       {{m.dirty}}<br>
+       {{m.pristine}}<br>
+       {{m.valid}}<br>
+       
+       
+       <font color="blue" size=12> <fa-icon [icon]='l'></fa-icon>   </font><label>password</label>
+    <input type="text"  name="uid" #m="ngModel" required pattern="[a-z]+" 
+    [class.v]="m.valid && m.touched"   [class.iv]="m.invalid && m.touched" ngModel class="form-control"> <br><br>
+    
+
+    <div style="background-color:pink;color:red">
+        <div *ngIf="m.errors?.['required']">Enter Username</div>
+        <div *ngIf="m.errors?.['pattern']">Invalid Pattern</div>
+        </div>
+    
+    
+    <font color="blue" size=12> </font>
+    <input type="password" name="pwd" ngModel class="form-control"><br><br><br>
+    
+    <input style=color:orange type="submit" [disabled]="kuchbhi.form.invalid" value="Login" class="btn btn-primary">
+    
+    </div>
+    </form>
+    
+    
